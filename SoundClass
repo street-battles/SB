@@ -1,0 +1,22 @@
+// Need to add all sounds
+
+
+import java.applet.Applet;//Imports sound
+import java.applet.AudioClip;//Imports sound clips
+
+public class Sound {
+//Variables that contain sound clips used in the game
+private AudioClip clip;
+public Sound(String path) {
+clip=Applet.newAudioClip(getClass().getResource(path));//Takes the name of audio clip file
+}
+public void play() {
+new Thread() {//Plays the audio clip
+public void run() {
+clip.play();
+
+}
+}.start();//Starts the audio clip in the loop
+}
+
+}
